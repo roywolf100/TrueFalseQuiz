@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TrueFalseQuiz</string>
+    <string name="false_btn">לא נכון</string>
+    <string name="true_btn"> נכון</string>
+    <string name="go_back">חזרה לשאלה</string>
+    <string name="right">צדקת!</string>
+    <string name="wrong">טעית…</string>
+    <string name="final_r">ניקוד סופי:</string>
+
+
+    <string-array name="trivia_questions">
+        <item>האם עגבנייה היא מבחינה בוטנית פרי?</item>
+        <item>האם קולומבוס היה האדם הראשון שהגיע ליבשת אמריקה?</item>
+        <item>האם הלווייתן הכחול הוא בעל החיים הגדול ביותר שחי אי פעם בכדור הארץ?</item>
+        <item>האם למשולש ישר זווית יכולות להיות שתי זוויות ישרות?</item>
+        <item>האם השפה הרשמית בברזיל היא ספרדית?</item>
+        <item>האם קולנוע סאונד (סרט עם קול מוקלט) היה קיים כבר במאה ה-19?</item>
+        <item>האם רוסיה היא המדינה בעלת השטח הגדול ביותר בעולם?</item>
+        <item>האם בני אדם משתמשים רק ב-10% מהמוח שלהם?</item>
+        <item>האם יהלום עשוי אך ורק מאטומי פחמן?</item>
+        <item>האם הוטרינר הוא רופא שמטפל בבני אדם?</item>
+    </string-array>
+</resources>

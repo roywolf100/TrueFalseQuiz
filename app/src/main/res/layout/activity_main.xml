@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/screen_bg"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:id="@+id/score"
+        android:fontWeight="800"
+        android:textAlignment="viewStart"
+        android:layout_marginStart="10sp"
+        android:textSize="50sp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question"
+        android:textAlignment="center"
+        android:layout_marginBottom="15sp"
+        android:textColor="@color/white"
+        android:fontWeight="700"
+        android:textSize="24sp"/>
+    
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+
+        <Button
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/false_btn"
+            android:backgroundTint="@color/false_wrong"
+            android:layout_marginEnd="25sp"
+            android:id="@+id/false_button"
+            android:textColor="@color/white"
+            />
+
+
+        <Button
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/true_btn"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/true_correct"
+            android:id="@+id/true_button"
+             />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
