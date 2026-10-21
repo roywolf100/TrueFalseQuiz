@@ -16,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
     int qNum = 0;
     int userScore = 0;
     int questionsAmount;
+    String[] questions;
     protected void loadQuestion()
     {
-        String[] questions = getResources().getStringArray(R.array.trivia_questions);
+
         String question = questions[qNum];
             TextView tvQuestion = findViewById(R.id.question);
             tvQuestion.setText(question);
-            questionsAmount = questions.length;
     }
 
     protected void loadScore()
@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        questions = getResources().getStringArray(R.array.trivia_questions);
+        questionsAmount = questions.length;
 
 
         boolean[] answers = {
@@ -64,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
         Button btnTrue = findViewById(R.id.true_button);
         btnTrue.setOnClickListener(v -> {
             boolean isCorrect;
-            isCorrect = !answers[qNum];
+            isCorrect = answers[qNum];
             if(isCorrect) {
                 userScore++;
                 loadScore();
             }
 
 
-
+            qNum++;
             Intent intent = new Intent(MainActivity.this, ResultActivity.class);
             intent.putExtra("isCorrect", isCorrect);
             intent.putExtra("questionNumber", qNum );
@@ -82,12 +85,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnFalse = findViewById(R.id.false_button);
         btnFalse.setOnClickListener(v -> {
             boolean isCorrect;
-            isCorrect = answers[qNum];
+            isCorrect = !answers[qNum];
+
             if(isCorrect) {
                 userScore++;
                 loadScore();
             }
-
+            qNum++;
             Intent intent = new Intent(MainActivity.this, ResultActivity.class);
             intent.putExtra("isCorrect", isCorrect);
             intent.putExtra("questionNumber", qNum );
@@ -101,11 +105,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadQuestion();
+
 
         if (qNum < questionsAmount) {
             Log.d("MainActivity", String.valueOf(qNum));
-            qNum++;
+            loadQuestion();
         }
         else
         {
